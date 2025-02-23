@@ -3,6 +3,4 @@ import type { createCategoryFormSchema, updateCategoryFormSchema } from "../sche
 
 export type CreateCategoryFormSchema = z.infer<typeof createCategoryFormSchema>;
 export type UpdateCategoryFormSchema = z.infer<typeof updateCategoryFormSchema>;
-// export type CreateProductFormSchema = z.infer<typeof createProductFormSchema>;
-// export type UpdateProductFormSchema = z.infer<typeof updateProductFormSchema>;
 

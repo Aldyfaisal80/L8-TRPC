@@ -71,14 +71,15 @@ export const categoryRouter = createTRPCRouter({
             try {
                 const { db } = ctx;
                 const { name } = input;
-                const category = await db.category.findUnique({
-                    where: { name },    
-                })
-                if (category?.name === category?.name){
+                const existingCategory = await db.category.findUnique({
+                    where: { name },
+                });
+    
+                if (existingCategory) {
                     throw new TRPCError({
-                        code: "NOT_FOUND",
-                        message: `Category with name : ${category?.name} has already exists`,
-                    })
+                        code: "CONFLICT",
+                        message: `Category with name: ${name} already exists`,
+                    });
                 }
                 await db.category.create({
                     data: {
