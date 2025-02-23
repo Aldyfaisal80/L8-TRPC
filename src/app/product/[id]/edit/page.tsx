@@ -1,0 +1,1 @@
+export { ProductEditPage as default } from "@/features/product/pages/product-edit-page"

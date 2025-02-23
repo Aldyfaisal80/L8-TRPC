@@ -1,0 +1,1 @@
+export { ProductCreatePage as default } from "@/features/product/pages/product-create-page"
